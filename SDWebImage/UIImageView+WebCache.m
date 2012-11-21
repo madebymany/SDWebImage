@@ -49,7 +49,7 @@ static char operationKey;
 
     self.image = placeholder;
     
-    if (url)
+    if (url && ![url isKindOfClass:[NSNull class]])
     {
         id<SDWebImageOperation> operation = [SDWebImageManager.sharedManager downloadWithURL:url options:options progress:progressBlock completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished)
         {
